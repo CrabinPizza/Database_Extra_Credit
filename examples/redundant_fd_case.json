@@ -1,0 +1,9 @@
+{
+  "relation": "RedundancyExample",
+  "attributes": ["A", "B", "C"],
+  "functional_dependencies": [
+    {"lhs": ["A"], "rhs": ["B"]},
+    {"lhs": ["B"], "rhs": ["C"]},
+    {"lhs": ["A"], "rhs": ["C"]}
+  ]
+}

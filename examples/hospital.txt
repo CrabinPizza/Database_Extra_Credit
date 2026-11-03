@@ -1,0 +1,7 @@
+Design a hospital appointment database.
+Each patient has a unique patient_id, name, and date of birth.
+Each doctor has a unique doctor_id, name, and specialty.
+Each appointment has a unique appointment_id, date, time, and status.
+Each appointment belongs to exactly one patient and exactly one doctor.
+A patient may have many appointments; a doctor may have many appointments.
+Identify any ambiguous requirements instead of silently assuming them.

@@ -1,0 +1,8 @@
+{
+  "relation": "Slide53",
+  "attributes": ["A", "B", "C", "D"],
+  "functional_dependencies": [
+    {"lhs": ["A"], "rhs": ["B"]},
+    {"lhs": ["A"], "rhs": ["C"]}
+  ]
+}

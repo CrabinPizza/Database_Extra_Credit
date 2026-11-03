@@ -1,0 +1,110 @@
+{
+  "entities": [
+    {
+      "name": "Student",
+      "attributes": [
+        {
+          "name": "student_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "full_name",
+          "type": "string",
+          "nullable": false
+        }
+      ],
+      "primary_key": [
+        "student_id"
+      ]
+    },
+    {
+      "name": "Course",
+      "attributes": [
+        {
+          "name": "course_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "nullable": false
+        }
+      ],
+      "primary_key": [
+        "course_id"
+      ]
+    },
+    {
+      "name": "Section",
+      "attributes": [
+        {
+          "name": "section_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "term",
+          "type": "string",
+          "nullable": false
+        }
+      ],
+      "primary_key": [
+        "section_id"
+      ]
+    },
+    {
+      "name": "Instructor",
+      "attributes": [
+        {
+          "name": "instructor_id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "full_name",
+          "type": "string",
+          "nullable": false
+        }
+      ],
+      "primary_key": [
+        "instructor_id"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Course",
+      "to": "Section",
+      "cardinality": "one-to-many",
+      "optional_from": false,
+      "optional_to": false,
+      "name": "offers"
+    },
+    {
+      "from": "Instructor",
+      "to": "Section",
+      "cardinality": "one-to-many",
+      "optional_from": false,
+      "optional_to": false,
+      "name": "teaches"
+    },
+    {
+      "from": "Student",
+      "to": "Section",
+      "cardinality": "many-to-many",
+      "optional_from": true,
+      "optional_to": true,
+      "name": "enrolls"
+    }
+  ],
+  "assumptions": [
+    "Section has a globally unique section_id.",
+    "Enrollment grade must be added as a relationship attribute manually in this starter version."
+  ],
+  "questions": [
+    "What grade values are permitted?",
+    "Can a section have multiple instructors in exceptional cases?"
+  ]
+}

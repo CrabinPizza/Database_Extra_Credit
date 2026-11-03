@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Student",
+    "columns": [
+      {
+        "name": "student_id",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "full_name",
+        "type": "string",
+        "nullable": false
+      }
+    ],
+    "primary_key": [
+      "student_id"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "Course",
+    "columns": [
+      {
+        "name": "course_id",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "nullable": false
+      }
+    ],
+    "primary_key": [
+      "course_id"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "Section",
+    "columns": [
+      {
+        "name": "section_id",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "term",
+        "type": "string",
+        "nullable": false
+      },
+      {
+        "name": "course_course_id",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "instructor_instructor_id",
+        "type": "integer",
+        "nullable": true
+      }
+    ],
+    "primary_key": [
+      "section_id"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "course_course_id"
+        ],
+        "references": "Course",
+        "ref_columns": [
+          "course_id"
+        ]
+      },
+      {
+        "columns": [
+          "instructor_instructor_id"
+        ],
+        "references": "Instructor",
+        "ref_columns": [
+          "instructor_id"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Instructor",
+    "columns": [
+      {
+        "name": "instructor_id",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "full_name",
+        "type": "string",
+        "nullable": false
+      }
+    ],
+    "primary_key": [
+      "instructor_id"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "Student_Section",
+    "columns": [
+      {
+        "name": "student_student_id",
+        "type": "integer",
+        "nullable": false
+      },
+      {
+        "name": "section_section_id",
+        "type": "integer",
+        "nullable": false
+      }
+    ],
+    "primary_key": [
+      "student_student_id",
+      "section_section_id"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "student_student_id"
+        ],
+        "references": "Student",
+        "ref_columns": [
+          "student_id"
+        ]
+      },
+      {
+        "columns": [
+          "section_section_id"
+        ],
+        "references": "Section",
+        "ref_columns": [
+          "section_id"
+        ]
+      }
+    ]
+  }
+]

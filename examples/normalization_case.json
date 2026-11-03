@@ -1,0 +1,9 @@
+{
+  "relation": "EnrollmentDetails",
+  "attributes": ["student_id", "course_id", "student_name", "course_title", "grade"],
+  "functional_dependencies": [
+    {"lhs": ["student_id"], "rhs": ["student_name"]},
+    {"lhs": ["course_id"], "rhs": ["course_title"]},
+    {"lhs": ["student_id", "course_id"], "rhs": ["grade"]}
+  ]
+}

@@ -1,0 +1,7 @@
+A university offers courses.
+Each course has multiple sections.
+Each section belongs to one course and is taught by one course.
+Each course can teach multiple sections.
+Students may enroll in multiple sections and each section may have multiple students.
+An enrollment records a grade.
+Assume each student enrolls in a given section at most once.

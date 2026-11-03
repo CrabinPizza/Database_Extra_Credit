@@ -1,0 +1,20 @@
+erDiagram
+    Student {
+        integer student_id PK
+        string full_name
+    }
+    Course {
+        integer course_id PK
+        string title
+    }
+    Section {
+        integer section_id PK
+        string term
+    }
+    Instructor {
+        integer instructor_id PK
+        string full_name
+    }
+    Course ||--o{ Section : offers
+    Instructor ||--o{ Section : teaches
+    Student }o--o{ Section : enrolls
